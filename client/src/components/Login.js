@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../Context/user'
 
 const Login = () => {
     const [ name, setName ] = useState("")
@@ -28,7 +30,7 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <label className="text-teal-300">Name:</label>
+            <label>Name:</label>
                 <input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)}/>
                 <br/>
                 <label>Password:</label>
