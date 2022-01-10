@@ -25,7 +25,7 @@ const UserProvider = ({children}) => {
         fetch('/consoles')
         .then(res => res.json())
         .then(data => setConsoles(data))
-    })
+    },[])
 
     const login = (user) => {
         setUser(user)
