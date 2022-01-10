@@ -6,6 +6,7 @@ const UserProvider = ({children}) => {
 
     const [ user, setUser ] = useState(null)
     const [ loggedIn, setLoggedIn ] = useState(false)
+    const [ consoles, setConsoles ] = useState([])
 
     useEffect(() => {
         fetch('/me')
@@ -19,6 +20,12 @@ const UserProvider = ({children}) => {
             }
         })
     },[])
+
+    useEffect(() => {
+        fetch('/consoles')
+        .then(res => res.json())
+        .then(data => setConsoles(data))
+    })
 
     const login = (user) => {
         setUser(user)
@@ -37,7 +44,7 @@ const UserProvider = ({children}) => {
 
 
     return (
-        <UserContext.Provider value={{user, login, logout, signup, loggedIn}}>
+        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles}}>
             {children}
         </UserContext.Provider>
     )

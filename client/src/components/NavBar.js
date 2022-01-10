@@ -25,6 +25,9 @@ const NavBar = () => {
                 <h3>Welcome {user.name}...</h3>
                 <br/>
                 <button onClick={logoutUser}>Logout</button>
+                <NavLink to="/consoles">
+                    <button>Consoles</button>
+                </NavLink>
                 <hr/>
             </div>
         )
@@ -36,6 +39,9 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink to="/signup">
                     <button>Signup</button>
+                </NavLink>
+                <NavLink to="/consoles">
+                    <button>Consoles</button>
                 </NavLink>
                 <hr/>
             </div>
