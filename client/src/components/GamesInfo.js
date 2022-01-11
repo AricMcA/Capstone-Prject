@@ -16,9 +16,9 @@ const GamesInfo = () => {
 
     const userGamesList = <li key={userGamesInfo.id}>{userGamesInfo.title}: {userGamesInfo.year} -- {userGamesInfo.genre}</li>
     return (
-        <div>
+        <ul>
             {userGamesList}
-        </div>
+        </ul>
     )
 }
 

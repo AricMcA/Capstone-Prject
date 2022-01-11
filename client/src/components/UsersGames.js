@@ -16,9 +16,9 @@ const UsersGames = () => {
     const userGamesList = userGames.map(ug => <li key={ug.id}>{ug.title}: {ug.year} -- {ug.genre}</li>)
 
     return (
-        <div>
+        <ul>
             {userGamesList}
-        </div>
+        </ul>
     )
 }
 

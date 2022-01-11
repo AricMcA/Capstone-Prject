@@ -21,35 +21,35 @@ const NavBar = () => {
 
     if (loggedIn && user) {
         return (
-            <div>
+            <div className="space-x-2">
                 <h3>Welcome {user.name}...</h3>
                 <br/>
-                <button onClick={logoutUser}>Logout</button>
+                <button onClick={logoutUser} className="p-2 bg-cyan-400 rounded-md">Logout</button>
                 <NavLink to="/games">
-                    <button>Games</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">Games</button>
                 </NavLink>
                 <NavLink to="/user/consoles">
-                    <button>My Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">My Consoles</button>
                 </NavLink>
                 <NavLink to="/consoles">
-                    <button>Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">Consoles</button>
                 </NavLink>
-                <hr/>
+                <hr className="mt-2"/>
             </div>
         )
     } else{
         return (
-            <div>
+            <div className="space-x-2">
                 <NavLink to="/login">
-                    <button>Login</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">Login</button>
                 </NavLink>
                 <NavLink to="/signup">
-                    <button>Signup</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">Signup</button>
                 </NavLink>
                 <NavLink to="/consoles">
-                    <button>Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md">Consoles</button>
                 </NavLink>
-                <hr/>
+                <hr className="mt-2"/>
             </div>
         )
     }

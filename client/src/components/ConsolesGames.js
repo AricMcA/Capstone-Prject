@@ -16,9 +16,9 @@ const ConsolesGames = () => {
     const consoleGamesList = consoleGames.map(g => <li key={g.id}>{g.title}: {g.year} -- {g.genre}</li>)
 
     return (
-        <div>
+        <ul>
             {consoleGamesList}
-        </div>
+        </ul>
     )
 }
 

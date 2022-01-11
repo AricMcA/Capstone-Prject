@@ -6,12 +6,12 @@ const UsersConsoles = () => {
 
     const { userConsoles } = useContext(UserContext)
 
-    const userConsolesList = userConsoles.map(uc =>  <ul><Link key={uc.id} to={`/user/consoles/${uc.id}/games`}>{uc.model}</Link></ul>)
+    const userConsolesList = userConsoles.map(uc => <li key={uc.id}><Link to={`/user/consoles/${uc.id}/games`}>{uc.model}</Link></li>)
 
     return (
-        <div>
+        <ul>
             {userConsolesList}
-        </div>
+        </ul>
     )
 }
 

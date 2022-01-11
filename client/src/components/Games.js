@@ -6,12 +6,12 @@ const Games = () => {
 
     const { games } = useContext(UserContext)
 
-    const gamesList = games.map(g =>  <ul><Link key={g.id} to={`/games/${g.id}`}>{g.title}</Link></ul>)
+    const gamesList = games.map(g =>  <li key={g.id}><Link to={`/games/${g.id}`}>{g.title}</Link></li>)
 
     return (
-        <div>
+        <ul>
             {gamesList}
-        </div>
+        </ul>
     )
 }
 
