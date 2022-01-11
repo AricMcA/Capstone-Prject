@@ -5,8 +5,6 @@ const ConsolesGames = () => {
 
     const { id } = useParams();
 
-    console.log(id)
-
     const [ consoleGames, setConsoleGames ] = useState([])
 
     useEffect(() => {

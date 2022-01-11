@@ -25,6 +25,12 @@ const NavBar = () => {
                 <h3>Welcome {user.name}...</h3>
                 <br/>
                 <button onClick={logoutUser}>Logout</button>
+                <NavLink to="/games">
+                    <button>Games</button>
+                </NavLink>
+                <NavLink to="/user/consoles">
+                    <button>My Consoles</button>
+                </NavLink>
                 <NavLink to="/consoles">
                     <button>Consoles</button>
                 </NavLink>

@@ -7,6 +7,10 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Consoles from './components/Consoles';
 import ConsolesGames from './components/ConsolesGames';
+import UsersConsoles from './components/UsersConsoles';
+import UsersGames from './components/UsersGames';
+import Games from './components/Games';
+import GamesInfo from './components/GamesInfo';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/consoles" element={<Consoles />} />
             <Route exact path="/consoles/:id/games" element={<ConsolesGames />} />
+            <Route exact path="/user/consoles" element={<UsersConsoles />} />
+            <Route exact path="/user/consoles/:id/games" element={<UsersGames />} />
+            <Route exact path="/games" element={<Games />} />
+            <Route exact path="/games/:id" element={<GamesInfo />} />
           </Routes>
         </Router>
       </UserProvider>

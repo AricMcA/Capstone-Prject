@@ -6,7 +6,7 @@ const Consoles = () => {
 
     const { consoles } = useContext(UserContext)
 
-    const consolesList = consoles.map(c =>  <Link key={c.id} to={`/consoles/${c.id}/games`}>{c.model}</Link>)
+    const consolesList = consoles.map(c =>  <ul><Link key={c.id} to={`/consoles/${c.id}/games`}>{c.model}</Link></ul>)
 
     return (
         <div>

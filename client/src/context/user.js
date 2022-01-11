@@ -7,6 +7,8 @@ const UserProvider = ({children}) => {
     const [ user, setUser ] = useState(null)
     const [ loggedIn, setLoggedIn ] = useState(false)
     const [ consoles, setConsoles ] = useState([])
+    const [ userConsoles, setUserConsoles ] = useState([])
+    const [ games, setGames ] = useState([])
 
     useEffect(() => {
         fetch('/me')
@@ -27,6 +29,18 @@ const UserProvider = ({children}) => {
         .then(data => setConsoles(data))
     },[])
 
+    useEffect(() => {
+        fetch('/user/consoles')
+        .then(res => res.json())
+        .then(data => setUserConsoles(data))
+    },[])
+
+    useEffect(() => {
+        fetch('/games')
+        .then(res => res.json())
+        .then(data => setGames(data))
+    },[])
+
     const login = (user) => {
         setUser(user)
         setLoggedIn(true)
@@ -44,7 +58,7 @@ const UserProvider = ({children}) => {
 
 
     return (
-        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles}}>
+        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles, userConsoles, games}}>
             {children}
         </UserContext.Provider>
     )

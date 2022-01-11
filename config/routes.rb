@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
   get '/consoles/:console_id/games', to: 'consoles#games_index'
+  get '/user/consoles', to: 'consoles#users_consoles'
+  get '/user/consoles/:console_id/games', to: 'consoles#user_games_index'
+
   
   resources :consoles
   resources :games
