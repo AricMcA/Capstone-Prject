@@ -41,6 +41,33 @@ const UserProvider = ({children}) => {
         .then(data => setGames(data))
     },[])
 
+    const deleteGame = (id) => {
+        fetch(`/games/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+        .then(() => {
+            const newGames = games.filter(g => g.id !== id)
+            setGames(newGames)
+        })
+    }
+
+    const editGame = (game) => {
+        fetch(`/games/${game.id}`, {
+            method: 'PUT',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(game)
+        })
+        .then(res => res.json())
+        .then(game => {
+            const newGames = games.filter(g => g.id !== game.id)
+            const updatedGames = [...newGames, game]
+            setGames(updatedGames)
+        })
+    }
+
     const login = (user) => {
         setUser(user)
         setLoggedIn(true)
@@ -58,7 +85,7 @@ const UserProvider = ({children}) => {
 
 
     return (
-        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles, userConsoles, games}}>
+        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles, userConsoles, games, deleteGame, editGame}}>
             {children}
         </UserContext.Provider>
     )

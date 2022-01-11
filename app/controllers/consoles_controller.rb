@@ -13,7 +13,6 @@ class ConsolesController < ApplicationController
 
     def users_consoles
         consoles = current_user.consoles.uniq
-        # byebug
         render json: consoles
     end
 

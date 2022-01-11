@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { UserContext } from '../Context/user';
+
 
 const GamesInfo = () => {
 
@@ -12,7 +14,6 @@ const GamesInfo = () => {
         .then(res => res.json())
         .then(data => setUserGamesInfo(data))
     }, [])
-
 
     const userGamesList = <li key={userGamesInfo.id}>{userGamesInfo.title}: {userGamesInfo.year} -- {userGamesInfo.genre}</li>
     return (
