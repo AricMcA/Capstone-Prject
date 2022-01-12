@@ -22,6 +22,15 @@ class ConsolesController < ApplicationController
         render json: games
     end
 
+    def create
+        console = Console.create(console_params)
+        if console.valid?
+            render json: console
+        else
+            render json: { errors: console.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
     private
 
     def current_user
@@ -31,4 +40,8 @@ class ConsolesController < ApplicationController
     def current_console
         console = Console.find(params[:console_id])
     end
+
+    def console_params
+        params.permit(:model, :year, :storage)
+    end 
 end

@@ -22,17 +22,17 @@ const NavBar = () => {
     if (loggedIn && user) {
         return (
             <div className="space-x-2">
-                <h3>Welcome {user.name}...</h3>
+                <h3 className="pt-5">Welcome {user.name}...</h3>
                 <br/>
-                <button onClick={logoutUser} className="p-2 bg-cyan-400 rounded-md">Logout</button>
+                <button onClick={logoutUser} className="p-2 bg-cyan-400 rounded-md text-white font-bold">Logout</button>
                 <NavLink to="/games">
-                    <button className="p-2 bg-cyan-400 rounded-md">Games</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Games</button>
                 </NavLink>
                 <NavLink to="/user/consoles">
-                    <button className="p-2 bg-cyan-400 rounded-md">My Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">My Consoles</button>
                 </NavLink>
                 <NavLink to="/consoles">
-                    <button className="p-2 bg-cyan-400 rounded-md">Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Consoles</button>
                 </NavLink>
                 <hr className="mt-2"/>
             </div>
@@ -41,13 +41,13 @@ const NavBar = () => {
         return (
             <div className="space-x-2">
                 <NavLink to="/login">
-                    <button className="p-2 bg-cyan-400 rounded-md">Login</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Login</button>
                 </NavLink>
                 <NavLink to="/signup">
-                    <button className="p-2 bg-cyan-400 rounded-md">Signup</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Signup</button>
                 </NavLink>
                 <NavLink to="/consoles">
-                    <button className="p-2 bg-cyan-400 rounded-md">Consoles</button>
+                    <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Consoles</button>
                 </NavLink>
                 <hr className="mt-2"/>
             </div>
