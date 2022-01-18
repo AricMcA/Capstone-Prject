@@ -32,13 +32,13 @@ const GameForm = ({addGameForm}) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
-                <input type='text' id='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
+                <input type='text' id='title' value={title} onChange={(e) => setTitle(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Year:</label>
-                <input type='integer' id='year' value={year} onChange={(e) => setYear(e.target.value)}/>
+                <input type='integer' id='year' value={year} onChange={(e) => setYear(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Genre:</label>
-                <input type='text' id='genre' value={genre} onChange={(e) => setGenre(e.target.value)}/>
+                <input type='text' id='genre' value={genre} onChange={(e) => setGenre(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Console:</label>
                 <select name="console_id" value={console_id} onChange={(e) => setConsole_id(e.target.value)}>
@@ -46,10 +46,10 @@ const GameForm = ({addGameForm}) => {
                     {consoleList}
                 </select>
                 <br/>
-                <input type='submit'/>
+                <input type='submit' className="py-1 px-1 my-1 bg-orange-500 rounded-md text-white font-bold"/>
             </form>
                 {consoleFormAddFlag ? 
-                <ConsoleForm addConsoleForm={addConsoleForm} /> : <button onClick={() => setConsoleFormAddFlag(true)}>Add Console</button>
+                <ConsoleForm addConsoleForm={addConsoleForm} /> : <button onClick={() => setConsoleFormAddFlag(true)} className="py-1 px-1 bg-cyan-400 rounded-md text-white font-bold my-2">Add Console</button>
                 }
         </div>
     )

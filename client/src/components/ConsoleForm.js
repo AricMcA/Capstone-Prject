@@ -22,15 +22,15 @@ const ConsoleForm = ({addConsoleForm}) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>Model:</label>
-                <input type='text' id='model' value={model} onChange={(e) => setModel(e.target.value)}/>
+                <input type='text' id='model' value={model} onChange={(e) => setModel(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Year:</label>
-                <input type='integer' id='year' value={year} onChange={(e) => setYear(e.target.value)}/>
+                <input type='integer' id='year' value={year} onChange={(e) => setYear(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Storage:</label>
-                <input type='integer' id='storage' value={storage} onChange={(e) => setStorage(e.target.value)}/>
+                <input type='integer' id='storage' value={storage} onChange={(e) => setStorage(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
-                <input type='submit'/>
+                <input type='submit' className="py-1 px-1 my-1 bg-orange-500 rounded-md text-white font-bold"/>
             </form>
         </div>
     )

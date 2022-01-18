@@ -28,16 +28,16 @@ const Games = () => {
         setFormEditFlag(false)
     }
 
-    const gamesList = games.map(g =>  <li key={g.id}><Link to={`/games/${g.id}`}>{g.title}</Link> <button className="p-2 bg-cyan-400 rounded-md text-white font-bold" onClick={() => handleDelete(g.id)}>DELETE</button> <button className="p-2 bg-cyan-400 rounded-md text-white font-bold" onClick={() => editGameForm(g)}>EDIT</button></li>)
+    const gamesList = games.map(g =>  <li key={g.id} className="py-1"><Link to={`/games/${g.id}`} class="text-2xl py-1 text-cyan-400 font-bold">{g.title}</Link> <button className="p-2 bg-cyan-400 rounded-md text-white font-bold" onClick={() => handleDelete(g.id)}>DELETE</button> <button className="p-2 bg-cyan-400 rounded-md text-white font-bold" onClick={() => editGameForm(g)}>EDIT</button></li>)
 
     return (
         <div>
-            <h1>Games:</h1>
+            <h1 className="text-orange-500 text-2xl font-bold">Games:</h1>
         <ul>
             {gamesList}
         </ul>
             {formAddFlag ? 
-                <GameForm addGameForm={addGameForm} /> : <button onClick={() => setFormAddFlag(true)}>Add Game</button>
+                <GameForm addGameForm={addGameForm} /> : <button className="py-1.5 px-1 bg-orange-500 rounded-md text-white font-bold" onClick={() => setFormAddFlag(true)}>Add Game</button>
             }
             {formEditFlag ? 
                 <GameEditForm editGame={editingGame} editGameForm={editingGameForm}/> : null

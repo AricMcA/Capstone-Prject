@@ -31,13 +31,13 @@ const Login = () => {
         <div>
             <form onSubmit={handleSubmit}>
             <label>Name:</label>
-                <input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)}/>
+                <input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Password:</label>
-                <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
-                <input type='submit'/>
-            </form>
+                <input type='submit' className="py-1 px-1 my-1 bg-orange-500 rounded-md text-white font-bold"/>
+            </form >
             <ul>
                 <h3>{error}</h3>
             </ul>

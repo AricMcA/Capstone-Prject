@@ -15,10 +15,11 @@ const GamesInfo = () => {
         .then(data => setUserGamesInfo(data))
     }, [])
 
-    const userGamesList = <li key={userGamesInfo.id}>{userGamesInfo.title}: {userGamesInfo.year} -- {userGamesInfo.genre}</li>
     return (
         <ul>
-            {userGamesList}
+            <h1 className="pt-5 text-orange-500 font-bold text-xl">{userGamesInfo.title}</h1>
+            <h3 className="pt-2 text-orange-500 font-bold text-xl">{userGamesInfo.year}</h3>
+            <h3 className="pt-2 text-orange-500 font-bold text-xl">{userGamesInfo.genre}</h3>
         </ul>
     )
 }

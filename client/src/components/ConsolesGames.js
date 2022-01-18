@@ -13,7 +13,7 @@ const ConsolesGames = () => {
         .then(data => setConsoleGames(data))
     }, [])
 
-    const consoleGamesList = consoleGames.map(g => <li key={g.id}>{g.title}: {g.year} -- {g.genre}</li>)
+    const consoleGamesList = consoleGames.map(g => <li key={g.id} className="pt-5 text-orange-500 font-bold text-xl">{g.title}: {g.year} -- {g.genre}</li>)
 
     return (
         <ul>

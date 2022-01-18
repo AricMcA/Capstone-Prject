@@ -21,8 +21,8 @@ const NavBar = () => {
 
     if (loggedIn && user) {
         return (
-            <div className="space-x-2">
-                <h3 className="pt-5">Welcome {user.name}...</h3>
+            <div className="space-x-2 my-2">
+                <h3 className="pt-5 text-orange-500 font-bold text-xl">Welcome {user.name}...</h3>
                 <br/>
                 <button onClick={logoutUser} className="p-2 bg-cyan-400 rounded-md text-white font-bold">Logout</button>
                 <NavLink to="/games">
@@ -34,12 +34,11 @@ const NavBar = () => {
                 <NavLink to="/consoles">
                     <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Consoles</button>
                 </NavLink>
-                <hr className="mt-2"/>
             </div>
         )
     } else{
         return (
-            <div className="space-x-2">
+            <div className="space-x-2 my-10">
                 <NavLink to="/login">
                     <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Login</button>
                 </NavLink>
@@ -49,7 +48,6 @@ const NavBar = () => {
                 <NavLink to="/consoles">
                     <button className="p-2 bg-cyan-400 rounded-md text-white font-bold">Consoles</button>
                 </NavLink>
-                <hr className="mt-2"/>
             </div>
         )
     }

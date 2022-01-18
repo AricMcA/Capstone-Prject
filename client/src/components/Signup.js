@@ -42,15 +42,15 @@ const Signup = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>Name:</label>
-                <input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)}/>
+                <input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Password:</label>
-                <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
                 <label>Confirm Password:</label>
-                <input type='password' id='password_confirmation' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>
+                <input type='password' id='password_confirmation' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} className="border-2 border-cyan-400"/>
                 <br/>
-                <input type='submit'/>
+                <input type='submit' className="py-1 px-1 my-1 bg-orange-500 rounded-md text-white font-bold"/>
             </form>
             <ul>
                 {errorsList}
