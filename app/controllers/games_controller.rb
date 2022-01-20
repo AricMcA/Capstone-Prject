@@ -1,5 +1,4 @@
 class GamesController < ApplicationController
-    # before_action :authorize
 
     def index
         games = current_user.games
@@ -55,11 +54,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-        params.permit(:title, :year, :genre, :console_id)
+        params.permit(:title, :year, :genre, :console_id, console_attributes: [:model, :year, :storage])
     end
-
-    # def authorize
-    #     return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-    # end
 
 end

@@ -80,18 +80,6 @@ const UserProvider = ({children}) => {
         })
     }
 
-    const addConsole = (console) => {
-        fetch('/consoles', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(console)
-        })
-        .then(res => res.json())
-        .then(data => {
-            setConsoles([...consoles, data])
-        })
-    }
-
     const login = (user) => {
         setUser(user)
         setLoggedIn(true)
@@ -109,7 +97,7 @@ const UserProvider = ({children}) => {
 
 
     return (
-        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles, userConsoles, games, deleteGame, editGame, addGame, addConsole}}>
+        <UserContext.Provider value={{user, login, logout, signup, loggedIn, consoles, userConsoles, games, deleteGame, editGame, addGame}}>
             {children}
         </UserContext.Provider>
     )
