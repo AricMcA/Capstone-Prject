@@ -16,8 +16,8 @@ npm install --prefix client
 
 You can use the following commands to run the backend and frontend:
 
-`rails s`: run the backend on http://localhost:3000
-`npm start --prefix client`: run the frontend on http://localhost:4000
+- `rails s`: run the backend on http://localhost:3000
+- `npm start --prefix client`: run the frontend on http://localhost:4000
 
 ## Thanks
 
